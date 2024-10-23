@@ -19,7 +19,7 @@ public class IterativeMethods {
 		}
 		return sum;
 	}
-
+//its a sum of 1/2^n for n values
 	/**
 	 * @param array the array to create a reverse of, not to be mutated
 	 * @return an array with the same data as the input but it reverse order
