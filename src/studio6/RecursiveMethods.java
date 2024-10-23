@@ -40,8 +40,45 @@ public class RecursiveMethods {
 	 */
 	public static void circlesUponCircles(double xCenter, double yCenter, double radius,
 			double radiusMinimumDrawingThreshold) {
-		
+			if (radiusMinimumDrawingThreshold == 1) {
+				StdDraw.circle(xCenter, yCenter, radiusMinimumDrawingThreshold);
+				return;
+			}
+			else {
+				double r = radiusMinimumDrawingThreshold;
+				double x = xCenter;
+				double y = yCenter;
+				//every circle has the same radius
+				double radius_new = r/2;
+				//circle 1
+				double X_circle1 = x - r;
+				double Y_Circle1 = y - r;
+				//circle 2
+				double X_circle2 = x + r;
+				double Y_Circle2 = y - r;
+				//circle 3
+				double X_circle3 = x - r;
+				double Y_Circle3 = y + r;
+				//circle 3
+				double X_circle4 = x + r;
+				double Y_Circle4 = y + r;
+				
+				
+				StdDraw.circle(X_circle1, Y_Circle1, radius_new);
+				StdDraw.circle(X_circle2, Y_Circle2, radius_new);
+				StdDraw.circle(X_circle3, Y_Circle3, radius_new);
+				StdDraw.circle(X_circle4, Y_Circle4, radius_new);
+				circlesUponCircles(X_circle1, Y_Circle1, radius_new);
+				circlesUponCircles(X_circle2, Y_Circle2, radius_new);
+				circlesUponCircles(X_circle3, Y_Circle3, radius_new);
+				circlesUponCircles(X_circle4, Y_Circle4, radius_new);
+				
+				
+			}
+			
+			
 		// FIXME
+		
 	}
 
 	/**
